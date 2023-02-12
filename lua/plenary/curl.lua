@@ -215,6 +215,7 @@ parse.request = function(opts)
   append(parse.auth(opts.auth))
   append(opts.raw)
   if opts.output then
+    print("OUTPUT " .. opts.output)
     table.insert(result, { "-o", opts.output })
   end
   table.insert(result, parse.url(opts.url, opts.query))
@@ -252,7 +253,7 @@ local request = function(specs)
   end
 
   local job = J:new {
-    command = "curl",
+    command = "C:\\tools\\neovim\\nvim-win64\\bin\\curl.exe",
     args = args,
     on_exit = function(j, code)
       if code ~= 0 then
